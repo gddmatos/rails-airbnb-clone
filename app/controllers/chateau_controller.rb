@@ -1,0 +1,2 @@
+class ChateauController < ApplicationController
+end
