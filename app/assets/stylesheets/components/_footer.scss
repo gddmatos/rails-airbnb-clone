@@ -2,22 +2,33 @@
   background: #F4EFE6;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 100px;
   padding: 0px 50px;
   color: #010204;
-  border-top: 1px solid #E5E2AE
+  border-top: 1px solid #E5E2AE;
+  text-align:center;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+
 }
+
 .footer-links {
+  color: #616668;
+  font-size: 14px;
   display: flex;
   align-items: center;
+
 }
 .footer-links a {
-  color: #010204;
+  color: #616668;
   opacity: 0.60;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 14px;
   padding: 0px 10px;
+
 }
 .footer-links a:hover {
   opacity: 1;

@@ -11,12 +11,13 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'pages/header' %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <div>
-    <%= render "shared/footer" %>
-    </div>
     <%= javascript_include_tag 'application' %>
   </body>
+  <footer>
+    <%= render "shared/footer" %>
+  </footer>
 </html>

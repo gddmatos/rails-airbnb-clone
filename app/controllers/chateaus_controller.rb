@@ -1,5 +1,4 @@
-class ChateauController < ApplicationController
-
+class ChateausController < ApplicationController
   def index
     @chateaus = Chateau.all
   end

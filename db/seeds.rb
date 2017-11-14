@@ -15,7 +15,7 @@ chateau_attributes = [
     address:      "Copse Hill",
     description:  "In The Heart Of Wimbledon Village",
     price:        12000,
-    area:         7800
+    area:         7800,
     bedrooms:     8
   },
   {
@@ -23,7 +23,7 @@ chateau_attributes = [
     address:      "Highbury Road",
     description:   "Pure elegance",
     price:        10000,
-    area:         65000
+    area:         65000,
     bedrooms:     5
   },
   {
@@ -31,7 +31,7 @@ chateau_attributes = [
     address:      "Homefield Road",
     description:  "Distinguished flat , fantatsic location",
     price:         7000,
-    area:          3000
+    area:          3000,
     bedrooms:      3
   },
 {
@@ -39,7 +39,7 @@ chateau_attributes = [
     address:      "Homepark",
     description:  "This is Living",
     price:         15000,
-    area:          7500
+    area:          7500,
     bedrooms:      5
   },
 {
@@ -47,7 +47,7 @@ chateau_attributes = [
     address:      "Roedan Crescent",
     description:  "Absolute decadance",
     price:         20000,
-    area:          11300
+    area:          11300,
     bedrooms:      4
   },
 ]
