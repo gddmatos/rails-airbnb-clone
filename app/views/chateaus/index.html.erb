@@ -1,10 +1,26 @@
-<h1>Chateau List</h1>
+<center>
+  <h1>Chateau List</h1>
 
-<ul>
-<% @chateaus.each do |chateau| %>
-  <li>
-    <%= chateau.description %>
-    <%= image_tag chateau.photo_url %>
-  </li>
-<% end %>
-</ul>
+  <div class="container">
+    <div class="row">
+      <ul class="list-inline">
+        <% @chateaus.each do |chateau| %>
+        <li>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= chateau.photo_url %>');">
+
+              <div class="card-description">
+                <%= chateau.description %>
+                <% end %>
+                <br>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</center>
+
+
+
