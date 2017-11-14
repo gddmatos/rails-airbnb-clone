@@ -4,6 +4,7 @@
 <% @chateaus.each do |chateau| %>
   <li>
     <%= chateau.description %>
+    <%= image_tag chateau.photo_url %>
   </li>
 <% end %>
 </ul>
