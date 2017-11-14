@@ -16,6 +16,7 @@ chateau_attributes = [
     description:  "In The Heart Of Wimbledon Village",
     price:        12000,
     area:         7800
+    bedrooms:     8
   },
   {
 
@@ -23,6 +24,7 @@ chateau_attributes = [
     description:   "Pure elegance",
     price:        10000,
     area:         65000
+    bedrooms:     5
   },
   {
 
@@ -30,6 +32,7 @@ chateau_attributes = [
     description:  "Distinguished flat , fantatsic location",
     price:         7000,
     area:          3000
+    bedrooms:      3
   },
 {
 
@@ -37,6 +40,7 @@ chateau_attributes = [
     description:  "This is Living",
     price:         15000,
     area:          7500
+    bedrooms:      5
   },
 {
 
@@ -44,6 +48,7 @@ chateau_attributes = [
     description:  "Absolute decadance",
     price:         20000,
     area:          11300
+    bedrooms:      4
   },
 ]
 chateau_attributes.each do |chateau|
