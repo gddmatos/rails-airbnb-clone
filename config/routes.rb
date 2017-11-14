@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :chateau
+  resources :chateaus
   resources :bookings
 
   root to: 'pages#home'
