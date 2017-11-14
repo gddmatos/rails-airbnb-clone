@@ -9,7 +9,7 @@ puts 'Cleaning database...'
 Chateau.destroy_all
 
 puts 'Showing Homes...'
-restaurants_attributes = [
+chateau_attributes = [
   {
 
     address:      "Copse Hill",
@@ -20,31 +20,33 @@ restaurants_attributes = [
   {
 
     address:      "Highbury Road",
-    description:   "Pure elegance"
+    description:   "Pure elegance",
     price:        10000,
     area:         65000
   },
   {
 
     address:      "Homefield Road",
-    description:  "Distinguished flat , fantatsic location"
+    description:  "Distinguished flat , fantatsic location",
     price:         7000,
     area:          3000
   },
 {
 
     address:      "Homepark",
-    description:  "This is Living"
+    description:  "This is Living",
     price:         15000,
     area:          7500
   },
 {
 
     address:      "Roedan Crescent",
-    description:  "Absolute decadance"
+    description:  "Absolute decadance",
     price:         20000,
     area:          11300
   },
 ]
-Chateau.create!(chateuas_attributes)
+chateau_attributes.each do |chateau|
+  Chateau.create(chateau)
+end
 puts 'Finished!'

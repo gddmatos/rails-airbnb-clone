@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20171114115924) do
 
   create_table "chateaus", force: :cascade do |t|
     t.string   "description"
+    t.string   "address"
     t.integer  "area"
     t.integer  "bedrooms"
     t.integer  "price"
