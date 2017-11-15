@@ -12,7 +12,7 @@ puts 'Showing Homes...'
 chateau_attributes = [
   {
 
-    address:      "Copse Hill",
+    address:      "Copse Hill, Wimbledon Village",
     description:  "In The Heart Of Wimbledon Village",
     price:        12000,
     area:         7800,
@@ -21,7 +21,7 @@ chateau_attributes = [
   },
   {
 
-    address:      "Highbury Road",
+    address:      "Highbury Road, Wimbledon Village",
     description:   "Pure elegance",
     price:        10000,
     area:         65000,
@@ -30,7 +30,7 @@ chateau_attributes = [
   },
   {
 
-    address:      "Homefield Road",
+    address:      "Homefield Road, Wimbledon Village",
     description:  "Distinguished flat , fantatsic location",
     price:         7000,
     area:          3000,
@@ -40,7 +40,7 @@ chateau_attributes = [
   },
 {
 
-    address:      "Homepark",
+    address:      "Homepark, Wimbledon Village",
     description:  "This is Living",
     price:         15000,
     area:          7500,
@@ -49,7 +49,7 @@ chateau_attributes = [
   },
 {
 
-    address:      "Roedan Crescent",
+    address:      "Roedan Crescent, Wimbledon Village",
     description:  "Absolute decadance",
     price:         20000,
     area:          11300,
