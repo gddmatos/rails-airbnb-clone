@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
 
   def new
     @booking = Booking.new
@@ -11,8 +11,12 @@ class BookingsController < ApplicationController
     @booking.chateau = @chateau
     @booking.user = current_user
 
+
+
     if @booking.save
       redirect_to confirmation_path(@chateau)
+
+
     else
       render 'chateaus/show'
     end
