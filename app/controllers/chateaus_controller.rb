@@ -4,6 +4,7 @@ class ChateausController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @chateau = Chateau.find(params[:id])
   end
 end
