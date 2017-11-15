@@ -1,20 +1,20 @@
 class BookingsController < ApplicationController
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def new
     @booking = Booking.new
   end
 
   def create
-    #@booking = Booking.create(booking_params)
+    @chateau = Chateau.find(params[:chateau_id])
     @booking = Booking.new(booking_params)
     @booking.chateau = @chateau
-    @booking.user = @user
+    @booking.user = current_user
 
     if @booking.save
-      redirect_to confirmation_url(@chateau)
+      redirect_to confirmation_path(@chateau)
     else
-      render 'chateaus/:id'
+      render 'chateaus/show'
     end
   end
 
