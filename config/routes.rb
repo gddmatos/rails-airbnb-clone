@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :bookings, except: [:new, :create]
 
+  get 'payment', to:'pages#payment'
+
   get 'confirmation', to:'pages#confirmation'
 
   root to: 'pages#home'
