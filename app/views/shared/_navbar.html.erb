@@ -3,19 +3,16 @@
   <%= link_to root_path, class: "navbar-lpchateau-brand" do %>
     <%= image_tag "visuals/thumb.png" %>
   <% end %>
-
   <!-- Right Navigation -->
   <div class="navbar-lpchateau-right hidden-xs hidden-sm">
-
     <!-- Links -->
     <%= link_to "Host", "#", class: "navbar-lpchateau-item navbar-lpchateau-link" %>
     <%= link_to "Bookings", "#", class: "navbar-lpchateau-item navbar-lpchateau-link" %>
-
     <!-- Avatar with dropdown menu -->
     <div class="navbar-lpchateau-item">
       <div class="dropdown">
 
-        <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-lpchateau-menu", "data-toggle" => "dropdown" %>
+       <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-lpchateau-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-lpchateau-dropdown-menu">
           <li>
             <%= link_to "#" do %>
@@ -36,7 +33,6 @@
       </div>
     </div>
   </div>
-
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-lpchateau-item hidden-md hidden-lg">
     <div class="dropdown">
