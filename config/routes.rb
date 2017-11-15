@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :chateaus do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:new, :create]
   end
 
-  resources :bookings, except: [:create]
+  resources :bookings, except: [:new, :create]
 
 
   root to: 'pages#home'
