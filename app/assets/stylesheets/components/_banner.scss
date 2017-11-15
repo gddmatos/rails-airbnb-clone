@@ -1,4 +1,25 @@
+.container {
+  width: 100%;
+  margin: auto;
+  padding: 0px;
+}
+
+.gradient {
+  background-image: linear-gradient(-225deg, rgba(0,47,75,0.9) 0%, rgba(220,66,37,0.9) 50%);
+}
+
+.container-img {
+  width:100%;
+  margin: auto;
+  padding: 0px;
+  background: url("visuals/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .9;
+}
+
 .banner {
+  position: sticky;
   color: white;
   text-align: center;
   height: 100vh;
