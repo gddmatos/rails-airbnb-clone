@@ -2,8 +2,11 @@
   display: -webkit-flex;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  padding: 0px 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .cards-container li {
