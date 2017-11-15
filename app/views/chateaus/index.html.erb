@@ -1,26 +1,42 @@
-<center>
-  <h1>Chateau List</h1>
-
-  <div class="container">
+<div class="content">
+  <div class="cards-container">
     <div class="row">
-      <ul class="list-inline">
-        <% @chateaus.each do |chateau| %>
-        <li>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= chateau.photo_url %>');">
+      <div class="col-xs-6">
+        <ul class="list-inline">
+          <% @chateaus.each do |chateau| %>
+          <li>
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= chateau.photo_url %>');">
 
-              <div class="card-description">
-                <%= chateau.description %>
-                <% end %>
-                <br>
+                <div class="card-description">
+                  <%= chateau.description %>
+                  <% end %>
+                  <br>
+                </div>
               </div>
-            </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xs-6">
+        <div id="map" style="width: 100%; height: 600px;">ppk</div>
+
+      </div>
     </div>
   </div>
-</center>
 
+  <% content_for(:after_js) do %>
+    <script>
+      var handler = Gmaps.build('Google');
 
-
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    </script>
+  <% end %>
+</div>
