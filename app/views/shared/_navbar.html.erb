@@ -5,6 +5,8 @@
   <% end %>
   <!-- Right Navigation -->
   <div class="navbar-lpchateau-right hidden-xs hidden-sm">
+    <% if user_signed_in? %>
+
     <!-- Links -->
     <%= link_to "Host", "#", class: "navbar-lpchateau-item navbar-lpchateau-link" %>
     <%= link_to "Bookings", "#", class: "navbar-lpchateau-item navbar-lpchateau-link" %>
@@ -15,23 +17,26 @@
        <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-lpchateau-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-lpchateau-dropdown-menu">
           <li>
-            <%= link_to "#" do %>
+            <%= link_to root_path do %>
               <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
             <% end %>
           </li>
           <li>
-            <%= link_to "#" do %>
+            <%= link_to edit_user_registration_path do %>
               <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
             <% end %>
           </li>
           <li>
-            <%= link_to "#" do %>
+            <%= link_to destroy_user_session_path, method: :delete do %>
               <i class="fa fa-window-close"></i>  <%= t(".profile", default: "Logout") %>
             <% end %>
           </li>
         </ul>
       </div>
     </div>
+    <% else %>
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
   </div>
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-lpchateau-item hidden-md hidden-lg">
