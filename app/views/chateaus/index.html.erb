@@ -6,17 +6,18 @@
           <% @chateaus.each do |chateau| %>
           <li>
             <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,47,75,0.2) 0%, rgba(220,66,37,0.2) 90%), url('<%= chateau.photo_url %>');">
-             <div class="card-description">
-              <%= link_to chateau.description, chateau_path(chateau.id) %>
-              <% end %>
-              <br>
+              <div class="card-description">
+                <%= link_to chateau.description, chateau_path(chateau.id) %>
+                <br>
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="col-xs-6">
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-xs-6">
         <div id="map"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -122,7 +123,7 @@
     markers = handler.addMarkers(<%= raw @hash.to_json %>);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
-    if (markers.length == 0) {@
+    if (markers.length == 0) {
       handler.getMap().setZoom(2);
     } else if (markers.length == 1) {
       handler.getMap().setZoom(14);
@@ -130,5 +131,5 @@
   });
 </script>
 <% end %>
-</div>
+
 
