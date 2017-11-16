@@ -1,5 +1,12 @@
-<%= simple_form_for([@chateau, @booking], html: { class: 'form_for'}) do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
-<% end %>
+
+<div class="content">
+  <div class="booking_form">
+    <%= simple_form_for([@chateau, @booking], {class: "form_for"}) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit %>
+    <%= link_to "Search", chateaus_path, {class: "btn btn-medium"} %>
+    <% end %>
+  </div>
+</div>
+
