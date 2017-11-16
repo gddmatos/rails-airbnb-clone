@@ -1,43 +1,140 @@
 <div class="content">
   <div class="cards-container">
     <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @chateau.photo_url %>');">
+      <div class="col-xs-12">
+        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,47,75,0.2) 0%, rgba(220,66,37,0.2) 90%), url('<%= @chateau.photo_url %>');">
         </div>
       </div>
-      <div class="col-xs-12 col-md-6">
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xs-4">
+        <div id="map" style="width: 100%; height: 200px"></div>
+      </div>
+      <div class="col-xs-5" id="booking-container">
         <ul class="list-inline">
-          <li><%= @chateau.description %></li>
+          <li><h4><span><%= @chateau.description %></span></h4></li>
           <li><%= @chateau.address %></li>
           <li><%= @chateau.bedrooms %> bedrooms </li>
           <li><%= @chateau.price %> £/pw</li>
         </ul>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
+      <div class="col-xs-3">
         <%= render "shared/booking_form" %>
       </div>
-      <div class="col-xs-12 col-md-6">
-        <div id="map" style="width: 100%; height: 600px;"></div>
-      </div>
+
+    </div>
+    <div class="row" style="height:80px">
     </div>
   </div>
 </div>
- <% content_for(:after_js) do %>
-    <script>
-      var handler = Gmaps.build('Google');
+<% content_for(:after_js) do %>
+<script>
+  var styles = [
+  {
+    "featureType": "administrative",
+    "elementType": "labels.text.fill",
+    "stylers": [
+    {
+      "color": "#1b3d6d"
+    },
+    {
+      "saturation": "-25"
+    },
+    {
+      "lightness": "-100"
+    },
+    {
+      "gamma": "0.00"
+    }
+    ]
+  },
+  {
+    "featureType": "landscape",
+    "elementType": "all",
+    "stylers": [
+    {
+      "color": "#e5e2ae"
+    }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "all",
+    "stylers": [
+    {
+      "visibility": "off"
+    }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "all",
+    "stylers": [
+    {
+      "saturation": -100
+    },
+    {
+      "lightness": 45
+    },
+    {
+      "hue": "#ff0000"
+    }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "all",
+    "stylers": [
+    {
+      "visibility": "simplified"
+    }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels.icon",
+    "stylers": [
+    {
+      "visibility": "off"
+    }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "all",
+    "stylers": [
+    {
+      "visibility": "off"
+    }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "all",
+    "stylers": [
+    {
+      "color": "#1b3d6d"
+    },
+    {
+      "visibility": "on"
+    }
+    ]
+  }
+  ]
+  var handler = Gmaps.build('Google');
 
-      handler.buildMap({ internal: { id: 'map' } }, function() {
-        markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-        if (markers.length == 0) {
-          handler.getMap().setZoom(2);
-        } else if (markers.length == 1) {
-          handler.getMap().setZoom(14);
-        }
-      });
-    </script>
+  handler.buildMap({ internal: { id: 'map' }, provider: {
+    styles: styles }, }, function() {
+      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+      }
+    });
+  </script>
   <% end %>
-  </div>
+</div>
