@@ -11,6 +11,21 @@
   border-bottom: 1px solid #E5E2AE;
 }
 
+.navbar-lpchateau-link {
+  color: #1B3D6D;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  opacity: 0.6;
+}
+
+.navbar-lpchateau-link:hover {
+ color: black;
+ text-decoration: none;
+ opacity: 0.6;
+}
 /* Logo */
 .navbar-lpchateau-brand img {
   height: 50px;
