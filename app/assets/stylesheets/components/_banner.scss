@@ -15,6 +15,7 @@
   background: url("visuals/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
   opacity: .9;
 }
 
@@ -22,12 +23,15 @@
   position: sticky;
   color: white;
   text-align: center;
-  height: 100vh;
+  height: 70vh;
+  vertical-align: middle;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-position: center center;
+  background-attachment: fixed;
 }
 .banner h1 {
   font-size: 50px;
