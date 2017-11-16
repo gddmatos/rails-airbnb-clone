@@ -28,8 +28,16 @@
     </div>
     <div>
       <div class="slider">
-      <img src="http://res.cloudinary.com/petit-chateau/image/upload/v1510676878/3b896616-4d71-428d-9a28-f832ac46ecd5-0_yqfpk7.jpg" /><img src="images/image2.jpg" /><img src="images/image3.jpg" /><div><img src="images/image4.jpg" /></div>
-     </div>
+      <div class="image">
+        <img src="http://res.cloudinary.com/petit-chateau/image/upload/v1510676878/3b896616-4d71-428d-9a28-f832ac46ecd5-0_yqfpk7.jpg" />
+      </div>
+      <div class="image">
+        <img src="http://res.cloudinary.com/petit-chateau/image/upload/v1510676879/584ca379-5c36-4a63-9b2f-1c665d93957a-0_h1vi80.jpg" />
+        </div>
+        <div class="image">
+        <img src="http://res.cloudinary.com/petit-chateau/image/upload/v1510676885/f12a70fa-9529-461d-8106-f5118f869afa-0_ard8at.jpg" />
+      </div>
+      </div>
     </div>
   </div>
 </div>
@@ -128,9 +136,10 @@
   }
   ]
   var handler = Gmaps.build('Google');
-
+  
   handler.buildMap({ internal: { id: 'map' }, provider: {
     styles: styles }, }, function() {
+
       markers = handler.addMarkers(<%= raw @hash.to_json %>);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
