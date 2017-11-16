@@ -5,7 +5,7 @@
         <ul class="list-inline" id="card-list">
           <% @chateaus.each do |chateau| %>
           <li>
-            <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,47,75,0.2) 0%, rgba(220,66,37,0.2) 90%), url('<%= chateau.photo_url %>);">
+            <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,47,75,0.2) 0%, rgba(220,66,37,0.2) 90%), url('<%= chateau.photo_url %>');">
              <div class="card-description">
               <%= link_to chateau.description, chateau_path(chateau.id) %>
               <% end %>
