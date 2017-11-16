@@ -22,6 +22,7 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]  # Fake password for validation
       user.save
     end
+    user
   end
 
 
@@ -32,7 +33,6 @@ class User < ApplicationRecord
     UserMailer.welcome(self).deliver_now
   end
 end
-
 
 
 
