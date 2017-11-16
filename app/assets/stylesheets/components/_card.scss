@@ -64,14 +64,15 @@
 .cards-container {
   width: 100%;
 }
+
 #card-list {
   margin-bottom: 0px;
   padding-right: 0.25px;
   padding-left: 0.25px;
 }
 #map {
-  position: sticky !important; /* !important to override Gmaps inline CSS */
+//   position: sticky !important; /* !important to override Gmaps inline CSS */
   top: 0 !important;
   border: 3px solid #E5E2AE;
-  height: 600px;
+  height: 1016px;
 }
