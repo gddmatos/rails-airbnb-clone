@@ -2,11 +2,10 @@
 
 .footer {
   background: #F4EFE6;
-  transition: all 0.3s ease;
-  padding: 10px 50px 0px 90px;
+  padding: 10px 90px 0px 90px;
   border-top: 1px solid #E5E2AE;
   text-align:center;
-  position: relative;
+  position: sticky;
   bottom: 0px;
   left: 0px;
   right: 0px;
@@ -28,7 +27,11 @@
 
 .footer-lpchateau-link {
   color: #1B3D6D;
-  font-size: 0.9em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.3em;
   opacity: 0.6;
 }
 

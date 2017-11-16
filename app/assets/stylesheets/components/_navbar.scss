@@ -11,6 +11,21 @@
   border-bottom: 1px solid #E5E2AE;
 }
 
+.navbar-lpchateau-link {
+  color: #1B3D6D;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  opacity: 0.6;
+}
+
+.navbar-lpchateau-link:hover {
+ color: black;
+ text-decoration: none;
+ opacity: 0.6;
+}
 /* Logo */
 .navbar-lpchateau-brand img {
   height: 50px;
@@ -39,12 +54,16 @@
 /* Navbar link */
 .navbar-lpchateau-link {
   color: #1B3D6D;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.3em;
   padding-top: 8px;
   padding-bottom: 8px;
-  font-size: 0.9em;
 }
 .navbar-lpchateau-link:hover {
-  color: black;
+  color: #E5E2AE;
   text-decoration: none;
 }
 
@@ -53,6 +72,11 @@
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E5E2AE;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.3em;
 }
 .navbar-lpchateau-dropdown-menu li > a {
   transition: color 0.3s ease;
