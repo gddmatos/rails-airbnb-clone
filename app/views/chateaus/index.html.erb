@@ -1,27 +1,27 @@
 <div class="content">
   <div class="cards-container" id="card-list">
     <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <ul class="list-inline" id="card-list">
-          <% @chateaus.each do |chateau| %>
-          <li>
-            <%= link_to chateau_path(chateau.id) do %>
-            <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,47,75,0.2) 0%, rgba(220,66,37,0.2) 90%), url('<%= chateau.photo_url %>')">
+     <div class="ccol-xs-12 col-sm-6 col-md-6">
+      <ul class="list-inline" id="card-list">
+        <% @chateaus.each do |chateau| %>
+        <li>
+          <%= link_to chateau_path(chateau.id) do %>
+          <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,47,75,0.2) 0%, rgba(220,66,37,0.2) 90%), url('<%= chateau.photo_url %>')">
             <% end %>
-              <div class="card-description">
-                <%= link_to chateau.description, chateau_path(chateau.id) %>
-                <br>
-              </div>
+            <div class="card-description">
+              <%= link_to chateau.description, chateau_path(chateau.id) %>
+              <br>
             </div>
-            <% end %>
-          </li>
-        </ul>
-      </div>
-      <div class="col-xs-12 col-md-6">
-        <div id="map"></div>
-      </div>
+          </div>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div class="col-xs-6 col-md-6">
+      <div class="fixed-map" id="map" style="position: fixed"></div>
     </div>
   </div>
+</div>
 </div>
 
 <% content_for(:after_js) do %>
