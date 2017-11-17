@@ -22,7 +22,10 @@ gem 'omniauth-facebook'
 gem 'geocoder'
 gem "coffee-rails"
 gem "gmaps4rails"
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
 gem "letter_opener", group: :development
+
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
