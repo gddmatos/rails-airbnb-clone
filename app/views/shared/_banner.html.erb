@@ -3,9 +3,9 @@
     <div class="banner-content">
       <div class="banner">
         <%= form_tag chateaus_path, :method => :get do %>
-          <%= text_field_tag :bedrooms, '1' %>
-          <%= text_field_tag :area, '1' %>
-          <%= text_field_tag :price, '1' %>
+          <%= text_field_tag :bedrooms, nil, placeholder: "Bedrooms" %>
+          <%= text_field_tag :area, nil, placeholder: "Area" %>
+          <%= text_field_tag :price, nil, placeholder: "Price" %>
           <%= submit_tag "Search", :name => nil, class: "btn btn-medium-sp" %>
         <% end %>
       </div>

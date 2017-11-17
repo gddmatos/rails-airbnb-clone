@@ -1,7 +1,9 @@
 class ChateausController < ApplicationController
   def index
     #@chateaus = Chateau.all
-    @chateaus = Chateau.where("bedrooms >= #{params[:bedrooms]}").where("area >= #{params[:area]}").where("price >= #{params[:price]}")
+    parameters = params
+    parameters = parameters.map {|key, value| value == "" ? value = "1" : value = value }
+    @chateaus = Chateau.where("bedrooms >= #{parameters[1]}").where("area >= #{parameters[2]}").where("price >= #{parameters[3]}")
     @hash = Gmaps4rails.build_markers(@chateaus) do |chateau, marker|
       marker.lat chateau.latitude
       marker.lng chateau.longitude
