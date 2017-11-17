@@ -57,7 +57,24 @@ chateau_attributes = [
     remote_photo_url: "http://res.cloudinary.com/petit-chateau/image/upload/v1510676881/3546c0f0-d0b4-4cda-99fa-17318b7c9d97-0_d9260p.jpg"
   },
 ]
+
+photos_urls = [
+  [
+    {remote_photo_url: "http://res.cloudinary.com/petit-chateau/image/upload/v1510676880/18a083ab-9853-4efb-9b49-b2143e38deb7-0_emchrn.jpg"},
+    {remote_photo_url: "http://res.cloudinary.com/petit-chateau/image/upload/v1510676881/3546c0f0-d0b4-4cda-99fa-17318b7c9d97-0_d9260p.jpg"}
+  ],
+  [{remote_photo_url: "http://res.cloudinary.com/petit-chateau/image/upload/v1510676881/07984fbe-38f2-457f-938d-e3d34ebf799c-0_pxdlwv.jpg"}],
+   [{remote_photo_url: "http://res.cloudinary.com/petit-chateau/image/upload/v1510676886/homefield4_xyelht.jpg"}],
+   [{remote_photo_url: "http://res.cloudinary.com/petit-chateau/image/upload/v1510676878/3d1afce0-6e3e-46a9-84e7-d6de3175911b-0_jnlrl0.jpg"}],
+   [{remote_photo_url: "http://res.cloudinary.com/petit-chateau/image/upload/v1510676881/3546c0f0-d0b4-4cda-99fa-17318b7c9d97-0_d9260p.jpg"}]
+]
+
+
 chateau_attributes.each do |chateau|
   Chateau.create(chateau)
+  photos_urls[0].each do |photo_url|
+    Chateau.last.photos.create(photo_url)
+  end
+  photos_urls.delete_at(0)
 end
 puts 'Finished!'

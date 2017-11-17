@@ -23,3 +23,6 @@ $border-radius-large: 2px;
 $border-radius-small: 2px;
 
 // Override other variables below!
+.slick-prev:before, .slick-next:before {
+    color: #1B3D6D;
+}
