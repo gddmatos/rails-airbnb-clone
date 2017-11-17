@@ -2,13 +2,17 @@
   <div class="container-img">
     <div class="banner-content">
       <div class="banner">
-        <%= form_tag chateaus_path, :method => :get do %>
+        <div id="booking-container-3">
+          <%= form_tag chateaus_path, :method => :get do %>
           <%= text_field_tag :bedrooms, '1' %>
           <%= text_field_tag :area, '1' %>
           <%= text_field_tag :price, '1' %>
           <%= submit_tag "Search", :name => nil, class: "btn btn-medium-sp" %>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
+</div>
+

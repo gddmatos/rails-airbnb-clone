@@ -1,7 +1,15 @@
-<h1>Congratulations! You just booked your own château!</h1>
+<div class="content">
+  <div class="row" id="booking-container-2">
+    <center>
+      <h1><span>Congratulations!
+        <br>
+      You just booked your own château!</span></h1>
 
-<%= @chateau.description %>
+      <h3><%= @chateau.description %></h3>
 
-<%= @booking.start_date %> <%= @booking.end_date %>
-
-<%= link_to "Back to Chateau", chateau_path(@chateau) %>
+      From:<%= @booking.start_date %> To: <%= @booking.end_date %>
+      <br><br>
+      <%= link_to "Back to Chateau", chateau_path(@chateau) %>
+    </center>
+  </div>
+</div>
