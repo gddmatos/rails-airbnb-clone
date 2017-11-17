@@ -23,6 +23,7 @@ gem 'geocoder'
 gem "coffee-rails"
 gem "gmaps4rails"
 gem "letter_opener", group: :development
+gem "jquery-slick-rails"
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
