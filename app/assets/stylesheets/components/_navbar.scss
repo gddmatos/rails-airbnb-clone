@@ -2,13 +2,16 @@
 .navbar-lpchateau {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: #F4EFE6;
-  transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
+  position: sticky;
   justify-content: space-between;
   border-bottom: 1px solid #E5E2AE;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
 
 .navbar-lpchateau-link {
@@ -18,6 +21,7 @@
   font-style: normal;
   font-size: 12px;
   letter-spacing: 0.3em;
+  text-decoration: none;
   opacity: 0.6;
 }
 
@@ -26,6 +30,7 @@
  text-decoration: none;
  opacity: 0.6;
 }
+
 /* Logo */
 .navbar-lpchateau-brand img {
   height: 50px;
@@ -52,6 +57,10 @@
 }
 
 /* Navbar link */
+
+#login {
+  text-decoration: none;
+}
 .navbar-lpchateau-link {
   color: #1B3D6D;
   text-transform: uppercase;

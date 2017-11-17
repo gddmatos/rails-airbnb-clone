@@ -1,135 +1,137 @@
 <div class="content">
   <div class="cards-container" id="card-list">
     <div class="row">
-      <div class="col-xs-6 col-md-6">
-        <ul class="list-inline" id="card-list">
-          <% @chateaus.each do |chateau| %>
-          <li>
-            <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,47,75,0.2) 0%, rgba(220,66,37,0.2) 90%), url('<%= chateau.photo_url %>');">
-              <div class="card-description">
-                <%= link_to chateau.description, chateau_path(chateau.id) %>
-                <br>
-              </div>
+     <div class="ccol-xs-12 col-sm-6 col-md-6">
+      <ul class="list-inline" id="card-list">
+        <% @chateaus.each do |chateau| %>
+        <li>
+          <%= link_to chateau_path(chateau.id) do %>
+          <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,47,75,0.2) 0%, rgba(220,66,37,0.2) 90%), url('<%= chateau.photo_url %>')">
+            <% end %>
+            <div class="card-description">
+              <%= link_to chateau.description, chateau_path(chateau.id) %>
+              <br>
             </div>
-          </li>
+          </div>
           <% end %>
-        </ul>
-      </div>
-      <div class="col-xs-6">
-        <div id="map"></div>
-      </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-xs-6 col-md-6">
+      <div class="fixed-map" id="map" style="position: fixed"></div>
     </div>
   </div>
+</div>
 </div>
 
 <% content_for(:after_js) do %>
 <script>
   var styles = [
+  {
+    "featureType": "administrative",
+    "elementType": "labels.text.fill",
+    "stylers": [
     {
-        "featureType": "administrative",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#1b3d6d"
-            },
-            {
-                "saturation": "-25"
-            },
-            {
-                "lightness": "-100"
-            },
-            {
-                "gamma": "0.00"
-            }
-        ]
+      "color": "#1b3d6d"
     },
     {
-        "featureType": "landscape",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#e5e2ae"
-            }
-        ]
+      "saturation": "-25"
     },
     {
-        "featureType": "poi",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
+      "lightness": "-100"
     },
     {
-        "featureType": "road",
-        "elementType": "all",
-        "stylers": [
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 45
-            },
-            {
-                "hue": "#ff0000"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#1b3d6d"
-            },
-            {
-                "visibility": "on"
-            }
-        ]
+      "gamma": "0.00"
     }
-]
+    ]
+  },
+  {
+    "featureType": "landscape",
+    "elementType": "all",
+    "stylers": [
+    {
+      "color": "#e5e2ae"
+    }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "all",
+    "stylers": [
+    {
+      "visibility": "off"
+    }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "all",
+    "stylers": [
+    {
+      "saturation": -100
+    },
+    {
+      "lightness": 45
+    },
+    {
+      "hue": "#ff0000"
+    }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "all",
+    "stylers": [
+    {
+      "visibility": "simplified"
+    }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels.icon",
+    "stylers": [
+    {
+      "visibility": "off"
+    }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "all",
+    "stylers": [
+    {
+      "visibility": "off"
+    }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "all",
+    "stylers": [
+    {
+      "color": "#1b3d6d"
+    },
+    {
+      "visibility": "on"
+    }
+    ]
+  }
+  ]
   var handler = Gmaps.build('Google');
 
   handler.buildMap({ internal: { id: 'map' }, provider: {
     styles: styles }, }, function() {
-    markers = handler.addMarkers(<%= raw @hash.to_json %>);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    if (markers.length == 0) {
-      handler.getMap().setZoom(2);
-    } else if (markers.length == 1) {
-      handler.getMap().setZoom(14);
-    }
-  });
-</script>
-<% end %>
+      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+      }
+    });
+  </script>
+  <% end %>
 
 

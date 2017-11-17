@@ -1,5 +1,17 @@
+
 .card {
   height: 200px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  border: 3px solid #E5E2AE;
+  background-size: cover !important;
+  background-position: center;
+  color: #F7F6ED;
+  position: relative;
+  align: left;
+}
+
+.card-search {
+  height: 10px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   border: 3px solid #E5E2AE;
   background-size: cover !important;
@@ -47,7 +59,13 @@
 }
 
 .cards-container {
+  padding-top: 95px;
   width: 100%;
+}
+.fixed-map {
+  position: fixed !important;
+  height: 500px;
+  overflow: hidden;
 }
 
 #card-list {
@@ -56,9 +74,7 @@
   padding-left: 0.25px;
 }
 #map {
-//   position: sticky !important; /* !important to override Gmaps inline CSS */
-  top: 0 !important;
+  position: fixed !important;
   border: 3px solid #E5E2AE;
-  height: 1016px;
-  width: 100%;
+  width: 75vh;
 }

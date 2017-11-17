@@ -4,7 +4,10 @@
   background: #F4EFE6;
   padding: 10px 90px 0px 90px;
   border-top: 1px solid #E5E2AE;
-  text-align:center;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   position: sticky;
   bottom: 0px;
   left: 0px;
@@ -15,7 +18,7 @@
 
 .networks-lpchateau-link li > a {
   color: #1B3D6D;
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 .networks-lpchateau-link a:hover {
