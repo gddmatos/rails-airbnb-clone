@@ -12,6 +12,7 @@ class ChateausController < ApplicationController
   def show
     @booking = Booking.new
     @chateau = Chateau.find(params[:id])
+    @photos = @chateau.photos
     @hash = Gmaps4rails.build_markers(@chateau) do |chateau, marker|
       marker.lat chateau.latitude
       marker.lng chateau.longitude

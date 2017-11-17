@@ -22,25 +22,37 @@
       <div class="col-xs-3">
         <%= render "shared/booking_form" %>
       </div>
-
     </div>
     <div class="row" style="height:80px">
     </div>
-    <div>
-      <div class="slider">
-      <div class="image">
+
+    <div class="chateau">
+       <div class="slider-container">
+        <% @photos.each do |slide| %>
+        <%= cl_image_tag slide.photo %>
+
+           <% end %>
+        </div>
+    </div>
+
+
+     <!-- <div class="image">
         <img src="http://res.cloudinary.com/petit-chateau/image/upload/v1510676878/3b896616-4d71-428d-9a28-f832ac46ecd5-0_yqfpk7.jpg" />
       </div>
-      <div class="image">
+    <div class="image">
         <img src="http://res.cloudinary.com/petit-chateau/image/upload/v1510676879/584ca379-5c36-4a63-9b2f-1c665d93957a-0_h1vi80.jpg" />
         </div>
         <div class="image">
         <img src="http://res.cloudinary.com/petit-chateau/image/upload/v1510676885/f12a70fa-9529-461d-8106-f5118f869afa-0_ard8at.jpg" />
       </div>
       </div>
+    </div> -->
+
     </div>
-  </div>
 </div>
+
+
+
 <% content_for(:after_js) do %>
 <script>
   var styles = [
