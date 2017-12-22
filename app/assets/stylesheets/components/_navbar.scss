@@ -1,14 +1,14 @@
 /* Main navbar */
 .navbar-lpchateau {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: #F4EFE6;
+  background: $white-pointer;
   height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   position: sticky;
   justify-content: space-between;
-  border-bottom: 1px solid #E5E2AE;
+  border-bottom: 1px solid $tusk;
   bottom: 0px;
   left: 0px;
   right: 0px;
