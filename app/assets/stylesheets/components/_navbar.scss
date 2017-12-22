@@ -1,34 +1,36 @@
+
 /* Main navbar */
 .navbar-lpchateau {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: $white-pointer;
+  background: rgba(41, 41, 41, 0.8);
   height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   position: sticky;
   justify-content: space-between;
-  border-bottom: 1px solid $tusk;
+  border-bottom: 1px solid $bokara-gray;
   bottom: 0px;
   left: 0px;
   right: 0px;
 }
 
 .navbar-lpchateau-link {
-  color: #1B3D6D;
+  color: $soft-cream;
+  transition: color 0.3s ease;
   text-transform: uppercase;
-  font-weight: 500;
   font-style: normal;
   font-size: 12px;
+  font-weight: lighter;
   letter-spacing: 0.3em;
-  text-decoration: none;
-  opacity: 0.6;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .navbar-lpchateau-link:hover {
  color: black;
  text-decoration: none;
- opacity: 0.6;
+ font-weight: lighter;
 }
 
 /* Logo */
@@ -62,9 +64,9 @@
   text-decoration: none;
 }
 .navbar-lpchateau-link {
-  color: #1B3D6D;
+  color: $soft-cream;
+  transition: color 0.3s ease;
   text-transform: uppercase;
-  font-weight: 500;
   font-style: normal;
   font-size: 12px;
   letter-spacing: 0.3em;
@@ -72,15 +74,14 @@
   padding-bottom: 8px;
 }
 .navbar-lpchateau-link:hover {
-  color: #E5E2AE;
+  color: black;
   text-decoration: none;
 }
 
 /* Dropdown menu */
 .navbar-lpchateau-dropdown-menu {
-  margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E5E2AE;
+  margin-top: 25px;
+  background-color: rgba(41, 41, 41, 0.8);
   text-transform: uppercase;
   font-weight: 500;
   font-style: normal;
@@ -90,7 +91,7 @@
 .navbar-lpchateau-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #1B3D6D !important;
+  color: $soft-cream !important;
   font-size: 0.9em !important;
   line-height: 22px !important;
   padding: 10px 20px;
@@ -99,15 +100,13 @@
   background: transparent !important;
   color: black !important;
 }
-.navbar-lpchateau-dropdown-menu:before {
-  content: ' ';
-  height: 10px;
-  width: 10px;
-  position: absolute;
-  right: 10px;
-  top: -6px;
-  background-color: white;
-  transform: rotate(45deg);
-  border-left: 1px solid #E6E6E6;
-  border-top: 1px solid #E6E6E6;
-}
+// .navbar-lpchateau-dropdown-menu:before {
+//   content: ' ';
+//   height: 10px;
+//   width: 10px;
+//   position: absolute;
+//   right: 10px;
+//   top: -6px;
+//   background-color: rgba(41, 41, 41, 0.8);;
+//   transform: rotate(45deg);
+// }

@@ -1,17 +1,22 @@
-<div class="gradient">
+  <header class="header">
+   <% if yield(:navbar) == "home" %>
+    <%= render 'shared/header' %>
+  <% else %>
+    <%= render 'shared/navbar' %>
+  <% end %>
+</header>
+
   <div class="container-img">
-    <div class="banner-content">
-      <div class="banner">
+    <div class="banner">
+      <div class="input-field">
         <%= form_tag chateaus_path, :method => :get do %>
-          <%= text_field_tag :bedrooms, nil, placeholder: "Bedrooms" %>
-          <%= text_field_tag :area, nil, placeholder: "Area" %>
-          <%= text_field_tag :price, nil, placeholder: "Price" %>
-          <%= submit_tag "Search", :name => nil, class: "btn-sp" %>
-          <% end %>
-        </div>
+        <%= text_field_tag :bedrooms, nil, placeholder: "Bedrooms" %>
+        <%= text_field_tag :area, nil, placeholder: "Area" %>
+        <%= text_field_tag :price, nil, placeholder: "Price" %>
+        <%= submit_tag "Search", :name => nil, class: "btn-sp" %>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
-</div>
+
 
