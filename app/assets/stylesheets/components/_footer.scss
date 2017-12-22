@@ -1,9 +1,9 @@
 // Main Footer
 
 .footer {
-  background: $white-pointer;
+  background: $soft-cream;
   padding: 10px 90px 0px 90px;
-  border-top: 1px solid $bokara-gray;
+  border-top: 1px solid $tusk;
   height: 80px;
   display: flex;
   flex-direction: column;
@@ -14,11 +14,12 @@
   right: 0px;
 }
 
-// Social networks links
+// Social network links
 
 .networks-lpchateau-link li > a {
-  color: #1B3D6D;
+  color: $bokara-gray;
   font-size: 1.4em;
+  opacity: 0.9;
 }
 
 .networks-lpchateau-link a:hover {
@@ -29,17 +30,17 @@
 // Footer links
 
 .footer-lpchateau-link {
-  color: #1B3D6D;
+  color: $bokara-gray;
   text-transform: uppercase;
   font-weight: 500;
   font-style: normal;
   font-size: 12px;
   letter-spacing: 0.3em;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .footer-lpchateau-link:hover {
- color: black;
- text-decoration: none;
- opacity: 0.6;
+  color: black;
+  text-decoration: none;
+  border-bottom: 2px solid $bokara-gray;
 }

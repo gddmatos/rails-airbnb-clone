@@ -10,13 +10,13 @@
     <div class="banner">
       <div class="input-field">
         <%= form_tag chateaus_path, :method => :get do %>
-        <%= text_field_tag :bedrooms, nil, placeholder: "Bedrooms" %>
-        <%= text_field_tag :area, nil, placeholder: "Area" %>
-        <%= text_field_tag :price, nil, placeholder: "Price" %>
+        <%= text_field_tag :bedrooms, nil, placeholder: "Bedrooms", class: "input-box" %>
+        <%= text_field_tag :area, nil, placeholder: "Area", class: "input-box" %>
+        <%= text_field_tag :price, nil, placeholder: "Price", class: "input-box" %>
         <%= submit_tag "Search", :name => nil, class: "btn-sp" %>
         <% end %>
       </div>
     </div>
   </div>
 
-
+<%= render "shared/footer" %>

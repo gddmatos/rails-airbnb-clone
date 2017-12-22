@@ -1,7 +1,7 @@
 .btn-sp {
   position: relative;
-  top: -3px;
-  color: $soft-cream;
+  color: $bokara-gray;
+  background-color: $soft-cream;
   flex: 1 1 auto;
   padding: 5px 30px;
   text-align: center;
@@ -10,15 +10,14 @@
   font-style: normal;
   font-size: 12px;
   letter-spacing: 0.3em;
-  transition: 0.5s;
+  transition: 1.5s;
   background-size: 200% auto;
-  box-shadow: 0 0 20px black;
   border-radius: 10px;
 }
 
 .btn-sp:hover {
   background-position: right center; /* change the direction of the change here */
-  background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+  background-image: linear-gradient(to right, $soft-cream 0%, $soft-cream 20%, $tusk 35%, $tusk 55%, $tusk 100%);
 }
 
 .btn-medium {
