@@ -4,7 +4,7 @@ $('.slider-container').slick({
   arrows: true,
   autoplay: true,
   infinite: true,
-  speed: 50,
+  speed: 1000,
   slidesToShow: 1,
   slidesToScroll: 1,
   responsive: [
@@ -14,7 +14,7 @@ $('.slider-container').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
-        dots: true,
+        dots: false,
       }
     },
     {
