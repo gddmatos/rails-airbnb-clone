@@ -3,13 +3,28 @@
 * ------------------------------------- */
 
 .alert {
-  margin: 0;
+  display: block;
+  margin: 0px;
   text-align: center;
   color: white;
+  margin-top: 74px;
+  border: none;
+  border-radius: none;
+
 }
 .alert-info {
-  background: $green;
+  background: $bokara-gray;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.3em;
 }
 .alert-warning {
-  background: $red;
+  background: $bokara-gray;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.3em;
 }

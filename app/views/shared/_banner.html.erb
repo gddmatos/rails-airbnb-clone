@@ -1,22 +1,24 @@
   <header class="header">
    <% if yield(:navbar) == "home" %>
-    <%= render 'shared/header' %>
-  <% else %>
-    <%= render 'shared/navbar' %>
-  <% end %>
-</header>
+   <%= render 'shared/header' %>
+   <% else %>
+   <%= render 'shared/navbar' %>
+   <% end %>
+ </header>
 
-  <div class="container-img">
-    <div class="banner">
-      <div class="input-field">
-        <%= form_tag chateaus_path, :method => :get do %>
-        <%= text_field_tag :bedrooms, nil, placeholder: "Bedrooms", class: "input-box" %>
-        <%= text_field_tag :area, nil, placeholder: "Area", class: "input-box" %>
-        <%= text_field_tag :price, nil, placeholder: "Price", class: "input-box" %>
-        <%= submit_tag "Search", :name => nil, class: "btn-sp" %>
-        <% end %>
-      </div>
+ <div class="container-img">
+  <div class="box-img" id="img-1">
+  <div class="banner">
+    <div class="input-field">
+      <%= form_tag chateaus_path, :method => :get do %>
+      <%= text_field_tag :bedrooms, nil, placeholder: "Bedrooms", class: "input-box" %>
+      <%= text_field_tag :area, nil, placeholder: "Area", class: "input-box" %>
+      <%= text_field_tag :price, nil, placeholder: "Price", class: "input-box" %>
+      <%= submit_tag "Search", :name => nil, class: "btn-sp" %>
+      <% end %>
     </div>
   </div>
+</div>
+</div>
 
 <%= render "shared/footer" %>
