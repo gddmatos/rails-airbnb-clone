@@ -2,7 +2,8 @@
 .card {
   height: 200px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  border: 3px solid #E5E2AE;
+  border: 1px solid $bokara-gray;
+  border-radius: 5px;
   background-size: cover !important;
   background-position: center;
   color: #F7F6ED;
@@ -23,8 +24,25 @@
 
 .card-description {
   position: absolute;
+  bottom: 40px;
+  left: 10px;
+}
+
+.explaining-text {
+  position: absolute;
   bottom: 10px;
   left: 10px;
+}
+
+.price-bedrooms {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: left;
+  background: rgba(41, 41, 41, 0.8);
+  padding: 5px;
+  border-radius: 6px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
 }
 
 .card-description a {
@@ -32,8 +50,8 @@
   text-transform: uppercase;
   font-weight: 500;
   font-style: normal;
-  font-size: 12px;
-  letter-spacing: 0.3em;
+  font-size: 16px;
+  letter-spacing: 0.2em;
 }
 
 .card-description a:hover {
@@ -61,20 +79,21 @@
 .cards-container {
   padding-top: 95px;
   width: 100%;
+  position: sticky !important;
 }
 .fixed-map {
   position: fixed !important;
   height: 500px;
   overflow: hidden;
 }
-
-#card-list {
+.card-list {
   margin-bottom: 0px;
   padding-right: 0.25px;
   padding-left: 0.25px;
 }
-#map {
+#chateaus-map {
   width: 100%;
-  border: 3px solid #E5E2AE;
+  border: 1px solid $bokara-gray;
+  border-radius: 5px;
   width: 75vh;
 }

@@ -1,9 +1,9 @@
 <div class="content">
-<%= render 'shared/navbar' %>
-  <div class="cards-container" id="card-list">
+  <%= render 'shared/navbar' %>
+  <div class="cards-container card-list>
     <div class="row">
      <div class="col-xs-12 col-sm-6 col-md-6">
-      <ul class="list-inline" id="card-list">
+      <ul class="list-inline card-list">
         <% @chateaus.each do |chateau| %>
         <li>
           <%= link_to chateau_path(chateau.id) do %>
@@ -13,13 +13,22 @@
               <%= link_to chateau.description, chateau_path(chateau.id) %>
               <br>
             </div>
+            <div class="explaining-text">
+              here goes some more explaining text
+              <br>
+            </div>
+            <div class="price-bedrooms">
+              path for $$$$
+              <br>
+              path for bedrooms n
+            </div>
           </div>
           <% end %>
         </li>
       </ul>
     </div>
     <div class="col-xs-6 col-md-6">
-      <div class="fixed-map" id="map" style="position: fixed"></div>
+      <div class="fixed-map" id="chateaus-map" style="position: fixed"></div>
     </div>
   </div>
 </div>
@@ -29,99 +38,99 @@
 <script>
   var styles = [
   {
-    "featureType": "administrative",
-    "elementType": "labels.text.fill",
+    "featureType": "water",
     "stylers": [
     {
-      "color": "#1b3d6d"
+      "visibility": "on"
     },
     {
-      "saturation": "-25"
-    },
-    {
-      "lightness": "-100"
-    },
-    {
-      "gamma": "0.00"
+      "color": "#b5cbe4"
     }
     ]
   },
   {
     "featureType": "landscape",
-    "elementType": "all",
     "stylers": [
     {
-      "color": "#e5e2ae"
-    }
-    ]
-  },
-  {
-    "featureType": "poi",
-    "elementType": "all",
-    "stylers": [
-    {
-      "visibility": "off"
-    }
-    ]
-  },
-  {
-    "featureType": "road",
-    "elementType": "all",
-    "stylers": [
-    {
-      "saturation": -100
-    },
-    {
-      "lightness": 45
-    },
-    {
-      "hue": "#ff0000"
+      "color": "#efefef"
     }
     ]
   },
   {
     "featureType": "road.highway",
-    "elementType": "all",
+    "elementType": "geometry",
     "stylers": [
     {
-      "visibility": "simplified"
+      "color": "#83a5b0"
     }
     ]
   },
   {
     "featureType": "road.arterial",
-    "elementType": "labels.icon",
+    "elementType": "geometry",
     "stylers": [
     {
-      "visibility": "off"
+      "color": "#bdcdd3"
     }
     ]
   },
   {
-    "featureType": "transit",
-    "elementType": "all",
+    "featureType": "road.local",
+    "elementType": "geometry",
     "stylers": [
     {
-      "visibility": "off"
+      "color": "#ffffff"
     }
     ]
   },
   {
-    "featureType": "water",
-    "elementType": "all",
+    "featureType": "poi.park",
+    "elementType": "geometry",
     "stylers": [
     {
-      "color": "#1b3d6d"
-    },
+      "color": "#e3eed3"
+    }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "stylers": [
     {
       "visibility": "on"
+    },
+    {
+      "lightness": 33
+    }
+    ]
+  },
+  {
+    "featureType": "road"
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels",
+    "stylers": [
+    {
+      "visibility": "on"
+    },
+    {
+      "lightness": 20
+    }
+    ]
+  },
+  {},
+  {
+    "featureType": "road",
+    "stylers": [
+    {
+      "lightness": 20
     }
     ]
   }
   ]
   var handler = Gmaps.build('Google');
 
-  handler.buildMap({ internal: { id: 'map' }, provider: {
+  handler.buildMap({ internal: { id: 'chateaus-map' }, provider: {
     styles: styles }, }, function() {
       markers = handler.addMarkers(<%= raw @hash.to_json %>);
       handler.bounds.extendWith(markers);
@@ -134,5 +143,7 @@
     });
   </script>
   <% end %>
+
+<%= render "shared/footer" %>
 
 
