@@ -28,7 +28,7 @@
             <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
             <% end %>
           </li>
-          <li>
+          <li class="logout">
             <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fa fa-window-close"></i>  <%= t(".profile", default: "Logout") %>
             <% end %>
