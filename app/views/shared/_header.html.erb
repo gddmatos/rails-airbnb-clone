@@ -3,7 +3,7 @@
   <%= link_to root_path, class: "navbar-lpchateau-brand" do %>
   <%= image_tag "visuals/logonovoroundwhite.svg" %>
   <% end %>
-  <!-- Right Navigation -->
+<!--   Right Navigation -->
   <div class="navbar-lpchateau-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
 
@@ -27,7 +27,7 @@
             <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
             <% end %>
           </li>
-          <li>
+          <li class="logout">
             <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fa fa-window-close"></i>  <%= t(".profile", default: "Logout") %>
             <% end %>
