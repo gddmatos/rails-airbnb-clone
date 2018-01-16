@@ -9,6 +9,9 @@
   color: #F7F6ED;
   position: relative;
   align: left;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  list-style: none;
 }
 
 .card-search {
@@ -74,26 +77,4 @@
  letter-spacing: 0.3em;
  opacity: 0.7;
  text-decoration: none;
-}
-
-.cards-container {
-  padding-top: 95px;
-  width: 100%;
-  position: sticky !important;
-}
-.fixed-map {
-  position: fixed !important;
-  height: 500px;
-  overflow: hidden;
-}
-.card-list {
-  margin-bottom: 0px;
-  padding-right: 0.25px;
-  padding-left: 0.25px;
-}
-#chateaus-map {
-  width: 100%;
-  border: 1px solid $bokara-gray;
-  border-radius: 5px;
-  width: 75vh;
 }
