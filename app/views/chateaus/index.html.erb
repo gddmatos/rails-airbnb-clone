@@ -1,6 +1,6 @@
 <%= render 'shared/navbar' %>
 <div class="content">
-  <div class="cards-container card-list>
+  <div class="cards-container card-list">
     <ul class="card-list">
       <li>
        <% @chateaus.each do |chateau| %>
@@ -16,9 +16,9 @@
             <br>
           </div>
           <div class="price-bedrooms">
-            path for $$$$
+            <%= chateau.price %>£ / week
             <br>
-            path for bedrooms n
+            <%= chateau.bedrooms %> bedrooms
           </div>
         </div>
         <% end %>
