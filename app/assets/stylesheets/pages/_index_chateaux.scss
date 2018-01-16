@@ -1,0 +1,52 @@
+.content {
+  display: grid;
+  grid-template-columns: 10px repeat(9, 1fr) 10px;
+  grid-template-rows: 73px 1fr 10px;
+  height: calc(100vh - 70px);
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  margin-left: 100px;
+  margin-right: 100px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+}
+
+.cards-container { 
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 4;
+  width: 100%;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 75px;
+
+  li {
+    width: 100%;
+    list-style: none;
+  }
+}
+.fixed-map {
+  display: none;
+  //  grid-row: 2 / span 1;
+  //  grid-column: 7 / span 3;
+  //  margin-top: auto;
+  //  margin-left: auto;
+  //  margin-right: auto;
+  //  position: fixed !important;
+  //  height: 500px;
+  //  overflow: hidden;
+}
+.card-list {
+  margin-bottom: 0px;
+  list-style: none;
+}
+#chateaus-map {
+  width: 100%;
+  border: 1px solid $bokara-gray;
+  border-radius: 5px;
+  width: 75vh;
+}
