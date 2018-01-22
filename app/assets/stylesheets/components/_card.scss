@@ -10,7 +10,7 @@
   position: relative;
   align: left;
   margin-top: 10px;
-  margin-bottom: 15px;
+  margin-bottom: -5px;
   list-style: none;
 }
 
@@ -29,23 +29,6 @@
   position: absolute;
   bottom: 40px;
   left: 10px;
-}
-
-.explaining-text {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-
-.price-bedrooms {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  text-align: left;
-  background: rgba(41, 41, 41, 0.8);
-  padding: 5px;
-  border-radius: 6px;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
 }
 
 .card-description a {
@@ -78,3 +61,23 @@
  opacity: 0.7;
  text-decoration: none;
 }
+
+.explaining-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  letter-spacing: 0.2em !important;
+}
+
+.price-bedrooms {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: left;
+  background: rgba(41, 41, 41, 0.8);
+  padding: 5px;
+  border-radius: 6px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+}
+
+

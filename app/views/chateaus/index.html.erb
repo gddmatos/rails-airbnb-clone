@@ -1,36 +1,36 @@
 <%= render 'shared/navbar' %>
-<div class="content">
+<div class="content-search">
   <div class="cards-container card-list">
     <ul class="card-list">
       <li>
        <% @chateaus.each do |chateau| %>
-        <%= link_to chateau_path(chateau.id) do %>
-        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,47,75,0.2) 0%, rgba(220,66,37,0.2) 90%), url('<%= chateau.photo_url %>')">
-          <% end %>
-          <div class="card-description">
-            <%= link_to chateau.description, chateau_path(chateau.id) %>
-            <br>
-          </div>
-          <div class="explaining-text">
-            here goes some more explaining text
-            <br>
-          </div>
-          <div class="price-bedrooms">
-            <%= chateau.price %>£ / week
-            <br>
-            <%= chateau.bedrooms %> bedrooms
-          </div>
+       <%= link_to chateau_path(chateau.id) do %>
+       <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,47,75,0.2) 0%, rgba(220,66,37,0.2) 90%), url('<%= chateau.photo_url %>')">
+        <div class="card-description">
+          <%= link_to chateau.description, chateau_path(chateau.id) %>
+          <br>
         </div>
-        <% end %>
-      </li>
-    </ul>
-  </div>
-  <div class="col-xs-6 col-md-6">
-    <div class="fixed-map" id="chateaus-map" style="position: fixed"></div>
-  </div>
+        <div class="explaining-text">
+          here goes some more explaining text
+          <br>
+        </div>
+        <div class="price-bedrooms">
+          <%= chateau.price %>£ / week
+          <br>
+          <%= chateau.bedrooms %> bedrooms
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </li>
+  </ul>
+</div>
+<div class="fixed-map" id="chateaus-map" style="position: relative">
+</div>
 </div>
 
 <% content_for(:after_js) do %>
+
 <script>
   var styles = [
   {
