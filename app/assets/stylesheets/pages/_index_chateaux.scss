@@ -1,7 +1,7 @@
 .content-search {
   display: grid;
-  grid-template-columns: 10px repeat(9, 1fr) 10px;
-  grid-template-rows: 73px 1fr 10px;
+  grid-template-columns: 10px repeat(11, 1fr) 10px;
+  grid-template-rows: 73px 10px 70px 10px 1fr 10px;
   height: calc(100vh - 70px);
   align-items: center;
   justify-content: center;
@@ -15,14 +15,28 @@
   letter-spacing: 0.3em;
 }
 
-.cards-container {
-  grid-row: 2 / span 1;
-  grid-column: 2 / span 4;
+.search-box {
+  grid-column: 2 / span 11;
+  background-color: $bokara-gray;
+  opacity: 0.8;
+  height: 100%;
   width: 100%;
+  margin-top: 83px;
+  margin-bottom: auto;
+  border-radius: 5px;
+}
+
+.cards-container {
+  grid-row: 5 / span 1;
+  grid-column: 2 / span 5;
+  width: 500px;
   margin-top: auto;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 75px;
+  ul {
+    padding: 0px;
+  }
   li {
     width: 100%;
     list-style: none;
@@ -30,8 +44,8 @@
 }
 
 .fixed-map {
-  grid-column: 7 / span 3;
-  margin-top: calc(82vh - 70px);
+  grid-column: 8 / span 3;
+  margin-top: calc(100vh - 30px);
   margin-left: auto;
   margin-right: auto;
   height: 500px;
@@ -41,5 +55,5 @@
 #chateaus-map {
   border: 1px solid $bokara-gray;
   border-radius: 5px;
-  width: 496px;
+  width: 500px;
 }

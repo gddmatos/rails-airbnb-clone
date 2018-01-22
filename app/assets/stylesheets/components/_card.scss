@@ -1,28 +1,24 @@
 
 .card {
-  height: 200px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  border: 1px solid $bokara-gray;
-  border-radius: 5px;
-  background-size: cover !important;
-  background-position: center;
-  color: #F7F6ED;
   position: relative;
   align: left;
   margin-top: 10px;
   margin-bottom: -5px;
-  list-style: none;
-}
-
-.card-search {
-  height: 10px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  border: 3px solid #E5E2AE;
+  height: 200px;
   background-size: cover !important;
   background-position: center;
-  color: #F7F6ED;
-  position: relative;
-  align: left;
+  list-style: none;
+  cursor: pointer;
+  border: 1px solid $bokara-gray;
+  border-radius: 5px;
+  color: $soft-cream;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+
+.card:hover {
+  background-color: $tusk;
+  opacity: 0.7;
+  text-decoration: none;
 }
 
 .card-description {
@@ -32,7 +28,7 @@
 }
 
 .card-description a {
-  color: #F7F6ED;
+  color: $soft-cream;
   text-transform: uppercase;
   font-weight: 500;
   font-style: normal;
@@ -41,25 +37,7 @@
 }
 
 .card-description a:hover {
-  opacity: 0.8;
   text-decoration: none;
-}
-
-.card-description h2 {
-  font-size: 24px;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-style: normal;
-  letter-spacing: 0.3em;
-}
-.card-description p {
- text-transform: uppercase;
- font-weight: 500;
- font-style: normal;
- font-size: 12px;
- letter-spacing: 0.3em;
- opacity: 0.7;
- text-decoration: none;
 }
 
 .explaining-text {
@@ -73,11 +51,17 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  text-align: left;
+  text-align: right;
   background: rgba(41, 41, 41, 0.8);
   padding: 5px;
   border-radius: 6px;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  p {
+    margin-top: auto;
+    margin-bottom: auto;
+    color: $soft-cream;
+    letter-spacing: 0.2em !important;
+  }
 }
 
 
