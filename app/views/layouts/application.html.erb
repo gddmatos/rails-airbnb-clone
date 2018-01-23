@@ -10,6 +10,11 @@
 
 </head>
 <body>
+ <% if yield(:navbar) == "home" %>
+ <%= render 'shared/navbar' %>
+ <% else %>
+ <%= render 'shared/header' %>
+ <% end %>
 
  <%= render 'shared/flashes' %>
  <div class="container">

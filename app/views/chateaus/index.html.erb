@@ -1,8 +1,38 @@
-<%= render 'shared/navbar' %>
-<div class="content-search">
-  <div class="search-box">
-    scvsdf
+ <div class="search-box">
+  <div class="box-results">
+    <ul>
+      <li>
+        <P>(RB path for n) properties correspond to your search</P>
+        <P>Sort by:
+          <select class="sortbox" name="sortby">
+            <option>Our favourites</option>
+            <option>Most recent</option>
+            <option>Price: High to low</option>
+            <option>Price: Low to high</option>
+            <option>Surface</option>
+            <option>Number of rooms</option>
+          </select>
+
+        </P>
+        <P>Show by:
+            <select class="sortbox" name="qttyperpage">
+            <option>5</option>
+            <option>10</option>
+            <option>15</option>
+            <option>All</option>
+          </select>
+        </P>
+      </li>
+      <li>
+        <P><a href="#"> > Modify the parameters of your search</a></P>
+        <P><a href="#"> > Save search parameters</a></P>
+        <P><a href="#"> > Create e-mail alert</a></P>
+      </li>
+    </ul>
   </div>
+</div>
+
+<div class="content-search">
   <div class="cards-container card-list">
     <ul class="card-list">
       <li>
