@@ -32,18 +32,32 @@
 }
 
 .fixed-map {
+//   grid-column: 8 / span 3;
+//   margin-top: calc(100vh - 30px);
+//   margin-left: auto;
+//   margin-right: auto;
+//   height: 500px;
+//   overflow: hidden;
+position: -webkit-sticky;
+position: sticky !important;
+}
+
+#chateaus-map {
+  // position: relative
   grid-column: 8 / span 3;
-  margin-top: calc(100vh - 30px);
+  grid-row: 4 / span 1;
+  margin-top: 530px;
   margin-left: auto;
   margin-right: auto;
   height: 500px;
   overflow: hidden;
-}
-
-#chateaus-map {
   border: 1px solid $bokara-gray;
   border-radius: 5px;
   width: 500px;
+  // flex: 0 0 450px;
+  // height: 100vh;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  // top: 0 !important;
 }
 
 // Refine search box //
@@ -51,46 +65,82 @@
 .search-box {
   grid-column: 2 / span 11;
   grid-row: 2 / span 2;
-  display: flex;
-  flex-flow: row wrap;
   background-color: $soft-cream;
   position: fixed;
   border-bottom: 1px solid $bokara-gray;
-  height: 79px;
+  height: 100px;
   width: 100%;
-  margin-top: 73px;
+  margin-top: 50px;
   margin-bottom: auto;
-  padding: 10px 0px;
+  padding: 40px 0px;
   z-index:10;
   text-transform: uppercase;
   font-weight: 500;
   font-style: normal;
   font-size: 10px;
   letter-spacing: 0.2em;
-  line-height: 80%;
+  // line-height: 80%;
   ul, li {
     list-style: none !important;
   }
 }
 
 .box-results {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-left: 0px !important;
+  .ul-right {
+    text-align: right;
+  }
+  .ul-right li {
+    line-height: 80%;
+  }
+  .ul-right a {
+    color: $bokara-gray;
+    transition: color 0.3s ease;
+  }
+  .ul-right a:hover {
+    color: $tusk;
+    text-decoration: none;
+  }
+  .ul-left {
+    text-align: left;
 
+  }
 }
 
 .sortbox {
-  background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
-  overflow: hidden;
-  padding: 0px;
-  height: 30px;
-  color: $bokara-gray;
-  text-align: left;
-  transition: color 0.3s ease;
-  text-transform: uppercase;
-  font-style: normal;
-  font-size: 12px;
-  font-weight: lighter;
-  letter-spacing: 0.2em;
+ -webkit-appearance: button;
+ -webkit-padding-end: 20px;
+ -webkit-padding-start: 2px;
+ -webkit-user-select: none;
+ background-image: url("visuals/caretbokgray.png");
+ background-color: transparent;
+ background-position: 97% center;
+ background-repeat: no-repeat;
+ border: none;
+ border-bottom: 2px solid #AAA;
+ border-radius: 0px;
+ color: #555;
+ text-transform: uppercase;
+ font-weight: 500;
+ font-style: normal;
+ font-size: 9.5px;
+ letter-spacing: 0.3em;
+ overflow: hidden;
+ padding: 6px 10px;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ width: 300px;
+}
+
+.sortbox:hover {
+  text-decoration: none;
+}
+
+.sortbox:focus {
   outline: none;
-  border: none;
-  background-color: transparent;
 }
