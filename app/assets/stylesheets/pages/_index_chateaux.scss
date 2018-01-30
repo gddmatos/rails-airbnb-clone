@@ -1,6 +1,8 @@
+//Page basic structure //
+
 .content-search {
   display: grid;
-  grid-template-columns: 110px repeat(11, 1fr) 110px;
+  grid-template-columns: 110px repeat(12, 1fr) 110px;
   grid-template-rows: 73px 10px 60px 10px 1fr 10px;
   height: calc(100vh - 70px);
   align-items: center;
@@ -10,54 +12,48 @@
   font-weight: 500;
   font-style: normal;
   font-size: 12px;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
   // position: relative;
 }
 
+// Cards listing style //
 .cards-container {
   grid-row: 5 / span 1;
-  grid-column: 2 / span 5;
+  grid-column: 3 / span 5;
   width: 500px;
   margin-top: auto;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 75px;
-  ul {
-    padding: 0px;
-  }
-  li {
-    width: 100%;
-    list-style: none;
-  }
+ ul {
+  padding: 0px;
+ }
+li {
+  width: 100%;
+  list-style: none;
+ }
 }
 
-.fixed-map {
-//   grid-column: 8 / span 3;
-//   margin-top: calc(100vh - 30px);
-//   margin-left: auto;
-//   margin-right: auto;
-//   height: 500px;
-//   overflow: hidden;
-position: -webkit-sticky;
-position: sticky !important;
+// Map & container map //
+
+.map-container {
+  position: relative !important;
+  grid-column: 8 / span 3;
+  grid-row: 4 / span 1;
+  margin-top: calc(100vh - 266px);
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh;
 }
 
 #chateaus-map {
-  // position: relative
-  grid-column: 8 / span 3;
-  grid-row: 4 / span 1;
-  margin-top: 530px;
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   height: 500px;
+  width: 500px;
   overflow: hidden;
   border: 1px solid $bokara-gray;
   border-radius: 5px;
-  width: 500px;
-  // flex: 0 0 450px;
-  // height: 100vh;
-  position: sticky !important; /* !important to override Gmaps inline CSS */
-  // top: 0 !important;
 }
 
 // Refine search box //
@@ -66,78 +62,79 @@ position: sticky !important;
   grid-column: 2 / span 11;
   grid-row: 2 / span 2;
   background-color: $soft-cream;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   position: fixed;
   border-bottom: 1px solid $bokara-gray;
   height: 100px;
   width: 100%;
   margin-top: 50px;
   margin-bottom: auto;
-  padding: 40px 0px;
-  z-index:10;
+  padding: 40px 30px;
   text-transform: uppercase;
   font-weight: 500;
   font-style: normal;
   font-size: 10px;
   letter-spacing: 0.2em;
-  // line-height: 80%;
+  z-index:10;
   ul, li {
     list-style: none !important;
   }
 }
 
-.box-results {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding-left: 0px !important;
-  .ul-right {
-    text-align: right;
+  .box-results {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-left: 0px !important;
+    .ul-right {
+      text-align: right;
+    }
+    .ul-right li {
+      line-height: 80%;
+    }
+    .ul-right a {
+      color: $bokara-gray;
+      transition: color 0.2s ease;
+    }
+    .ul-right a:hover {
+      color: $tusk;
+      text-decoration: none;
+    }
+    .ul-left {
+      text-align: left;
+    }
   }
-  .ul-right li {
-    line-height: 80%;
-  }
-  .ul-right a {
-    color: $bokara-gray;
-    transition: color 0.3s ease;
-  }
-  .ul-right a:hover {
-    color: $tusk;
-    text-decoration: none;
-  }
-  .ul-left {
-    text-align: left;
 
-  }
-}
+// Refine search dropdown menu //
 
-.sortbox {
- -webkit-appearance: button;
- -webkit-padding-end: 20px;
- -webkit-padding-start: 2px;
- -webkit-user-select: none;
- background-image: url("visuals/caretbokgray.png");
- background-color: transparent;
- background-position: 97% center;
- background-repeat: no-repeat;
- border: none;
- border-bottom: 2px solid #AAA;
- border-radius: 0px;
- color: #555;
- text-transform: uppercase;
- font-weight: 500;
- font-style: normal;
- font-size: 9.5px;
- letter-spacing: 0.3em;
- overflow: hidden;
- padding: 6px 10px;
- text-overflow: ellipsis;
- white-space: nowrap;
- width: 300px;
-}
+  .sortbox {
+   -webkit-appearance: button;
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url("visuals/caretbokgray.png");
+   background-color: transparent;
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: none;
+   border-bottom: 2px solid #AAA;
+   border-radius: 0px;
+   color: #555;
+   text-transform: uppercase;
+   font-weight: 500;
+   font-style: normal;
+   font-size: 9.5px;
+   letter-spacing: 0.2em;
+   overflow: hidden;
+   padding: 6px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 300px;
+ }
 
-.sortbox:hover {
+ .sortbox:hover {
   text-decoration: none;
 }
 

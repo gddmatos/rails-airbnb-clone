@@ -1,44 +1,10 @@
- <div class="search-box">
-  <div class="box-results">
-    <ul class="ul-left">
-      <li>
-        <P>(RB path) properties correspond to your search</P>
-        <P>Sort by:
-          <select class="sortbox" name="sortby">
-            <option>Our favourites</option>
-            <option>Most recent</option>
-            <option>Price: High to low</option>
-            <option>Price: Low to high</option>
-            <option>Surface</option>
-            <option>Number of rooms</option>
-          </select>
-        </P>
-        <!-- <p></p>
-        <P>Show by:
-          <select class="sortbox" name="qttyperpage">
-            <option>5</option>
-            <option>10</option>
-            <option>15</option>
-            <option>All</option>
-          </select>
-        </P> -->
-      </li>
-    </ul>
-    <ul class="ul-right">
-      <li>
-        <P><a href="#"> > Modify the parameters of your search</a></P>
-        <P><a href="#"> > Save search parameters</a></P>
-        <P><a href="#"> > Create e-mail alert</a></P>
-      </li>
-    </ul>
-  </div>
-</div>
+<%= render "shared/search_box" %>
 
 <div class="content-search">
-  <div class="cards-container card-list">
-    <ul class="card-list">
-      <li>
-       <% @chateaus.each do |chateau| %>
+  <div class="cards-container">
+    <ul>
+     <% @chateaus.each do |chateau| %>
+     <li>
        <%= link_to chateau_path(chateau.id) do %>
        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,47,75,0.2) 0%, rgba(220,66,37,0.2) 90%), url('<%= chateau.photo_url %>')">
         <div class="card-description">
@@ -59,121 +25,123 @@
         </li>
       </ul>
     </div>
-    <div class="fixed-map" id="chateaus-map" style="position: relative">
+    <div class="map-container"
+    <div id="chateaus-map" style="position: relative">
     </div>
   </div>
+</div>
 
-  <% content_for(:after_js) do %>
+<% content_for(:after_js) do %>
 
-  <script>
-    var styles = [
+<script>
+  var styles = [
+  {
+    "featureType": "water",
+    "stylers": [
     {
-      "featureType": "water",
-      "stylers": [
-      {
-        "visibility": "on"
-      },
-      {
-        "color": "#b5cbe4"
-      }
-      ]
+      "visibility": "on"
     },
     {
-      "featureType": "landscape",
-      "stylers": [
-      {
-        "color": "#efefef"
-      }
-      ]
-    },
-    {
-      "featureType": "road.highway",
-      "elementType": "geometry",
-      "stylers": [
-      {
-        "color": "#83a5b0"
-      }
-      ]
-    },
-    {
-      "featureType": "road.arterial",
-      "elementType": "geometry",
-      "stylers": [
-      {
-        "color": "#bdcdd3"
-      }
-      ]
-    },
-    {
-      "featureType": "road.local",
-      "elementType": "geometry",
-      "stylers": [
-      {
-        "color": "#ffffff"
-      }
-      ]
-    },
-    {
-      "featureType": "poi.park",
-      "elementType": "geometry",
-      "stylers": [
-      {
-        "color": "#e3eed3"
-      }
-      ]
-    },
-    {
-      "featureType": "administrative",
-      "stylers": [
-      {
-        "visibility": "on"
-      },
-      {
-        "lightness": 33
-      }
-      ]
-    },
-    {
-      "featureType": "road"
-    },
-    {
-      "featureType": "poi.park",
-      "elementType": "labels",
-      "stylers": [
-      {
-        "visibility": "on"
-      },
-      {
-        "lightness": 20
-      }
-      ]
-    },
-    {},
-    {
-      "featureType": "road",
-      "stylers": [
-      {
-        "lightness": 20
-      }
-      ]
+      "color": "#b5cbe4"
     }
     ]
-    var handler = Gmaps.build('Google');
+  },
+  {
+    "featureType": "landscape",
+    "stylers": [
+    {
+      "color": "#efefef"
+    }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+    {
+      "color": "#83a5b0"
+    }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [
+    {
+      "color": "#bdcdd3"
+    }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "geometry",
+    "stylers": [
+    {
+      "color": "#ffffff"
+    }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+    {
+      "color": "#e3eed3"
+    }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "stylers": [
+    {
+      "visibility": "on"
+    },
+    {
+      "lightness": 33
+    }
+    ]
+  },
+  {
+    "featureType": "road"
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels",
+    "stylers": [
+    {
+      "visibility": "on"
+    },
+    {
+      "lightness": 20
+    }
+    ]
+  },
+  {},
+  {
+    "featureType": "road",
+    "stylers": [
+    {
+      "lightness": 20
+    }
+    ]
+  }
+  ]
+  var handler = Gmaps.build('Google');
 
-    handler.buildMap({ internal: { id: 'chateaus-map' }, provider: {
-      styles: styles }, }, function() {
-        markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-        if (markers.length == 0) {
-          handler.getMap().setZoom(2);
-        } else if (markers.length == 1) {
-          handler.getMap().setZoom(14);
-        }
-      });
-    </script>
-    <% end %>
+  handler.buildMap({ internal: { id: "chateaus-map" }, provider: {
+    styles: styles }, }, function() {
+      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+      }
+    });
+  </script>
+  <% end %>
 
-    <%= render "shared/footer" %>
+  <%= render "shared/footer" %>
 
 
