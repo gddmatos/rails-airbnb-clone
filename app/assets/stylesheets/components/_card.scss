@@ -1,18 +1,16 @@
 
 .card {
   position: relative;
-  align: left;
-  margin-top: 10px;
-  margin-bottom: -5px;
-  height: 200px;
+  margin: 15px 10px;
+  height: 180px;
+  // width: 350px;
   background-size: cover !important;
   background-position: center;
-  list-style: none;
-  cursor: pointer;
   border: 1px solid $bokara-gray;
   border-radius: 5px;
   color: $soft-cream;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  cursor: pointer;
 }
 
 .card:hover {
@@ -25,19 +23,17 @@
   position: absolute;
   bottom: 40px;
   left: 10px;
-}
-
-.card-description a {
-  color: $soft-cream;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 16px;
-  letter-spacing: 0.2em;
-}
-
-.card-description a:hover {
-  text-decoration: none;
+  a {
+    color: $soft-cream;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: 0.2em;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 .explaining-text {
@@ -52,7 +48,8 @@
   top: 10px;
   right: 10px;
   text-align: right;
-  background: rgba(41, 41, 41, 0.8);
+  background: $bokara-gray;
+  opacity: 0.8;
   padding: 5px;
   border-radius: 6px;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
